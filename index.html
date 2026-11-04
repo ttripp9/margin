@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Margin</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icon-180.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Margin">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="theme-color" content="#F3F4F6" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0F1115" media="(prefers-color-scheme: dark)">
+<meta name="referrer" content="no-referrer">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&family=Literata:opsz,wght@7..72,400;7..72,500&display=swap">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="app" id="app" data-view="list">
+  <aside class="side" aria-label="Meetings">
+    <div class="side-top">
+      <button class="job-switch" id="jobSwitch" type="button" aria-haspopup="dialog" data-act="jobs">
+        <span class="dot" id="jobDot"></span>
+        <span class="job-name" id="jobName">Loading</span>
+        <span data-icon="chev"></span>
+      </button>
+      <button class="icon-btn" type="button" aria-label="Job settings" data-act="edit-job"><span data-icon="gear"></span></button>
+    </div>
+    <div class="setup-pill" id="setupPill" hidden>
+      <span>Add your Claude API key to get enhanced notes and live answers.</span>
+      <button class="btn sm" type="button" data-act="settings">Open settings</button>
+    </div>
+    <label class="search"><span data-icon="search"></span><input id="search" type="search" placeholder="Search this job" autocomplete="off" aria-label="Search meetings in this job"></label>
+    <div class="list" id="list"></div>
+    <div class="side-foot">
+      <button class="btn primary wide" type="button" data-act="new"><span data-icon="plus"></span>New meeting</button>
+      <button class="btn" type="button" data-act="settings" aria-label="Settings"><span data-icon="cog"></span></button>
+    </div>
+  </aside>
+  <main class="main" id="main"></main>
+</div>
+<div class="scrim" id="scrim" data-act="close" hidden></div>
+<section class="sheet" id="sheet" role="dialog" aria-modal="true" hidden></section>
+<div class="toast" id="toast" role="status" hidden></div>
+<script src="app.js"></script>
+</body>
+</html>
